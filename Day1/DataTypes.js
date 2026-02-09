@@ -141,6 +141,49 @@ console.log("Address is: "+address);//null
 console.log("Type is: "+typeof address);//object
 
 
+console.log("-------NonPrimitive-----------");
+
+let obj={};
+console.log(obj);
+console.log("Type is: "+typeof obj);
+
+
+let user={
+        id:101,
+        fname:"Sarang"
+
+        }
+console.log(user);
+console.log(typeof user);
+
+
+//array
+let arr=[];
+console.log(arr);
+console.log(typeof arr);//object
+
+let arr2=[10,20,30,40];
+console.log(arr2)
+console.log(typeof arr2);
+;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
