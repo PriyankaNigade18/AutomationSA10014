@@ -1,0 +1,79 @@
+Assignment Based on Data Types, Variables and Operators
+1. Identify the Data Type
+Write a program to declare the following variables and log 
+their data types:
+let a = "Hello";
+let b = 100;
+let c = true;
+let d = null;
+let e = undefined;
+let f = { name: "John" };
+let g = [1, 2, 3];
+let h = function() {
+};
+
+2. Variable Scope Check
+What will be the output of the following?
+var x = 10;
+function test() {
+ var x = 20;
+ console.log(x);
+}
+test();
+console.log(x);
+
+
+3. Hoisting Example
+Predict the output and explain:
+console.log(a);
+var a = 5;
+4. Let vs Var
+What will be the output?
+function testScope() {
+ if (true) {
+ var a = 10;
+ let b = 20;
+ }
+ console.log(a); // ?
+ console.log(b); // ?
+}
+testScope();
+
+
+
+5. Const Behavior
+What will happen?
+const obj = { name: "Alice" };
+obj.name = "Bob";
+console.log(obj.name);
+obj = { name: "Charlie" }; // What happens here?
+
+6. What’s the type of typeof null?
+console.log(typeof null); // ?
+
+
+7. Operator Precedence(Apply BODMAS rule)
+Predict the output:
+let result = 10 + 5 * 2 / 2 - 1;
+console.log(result);
+8. Check Type Conversion
+What will be the output of the following?
+let x = "5" + 3;
+let y = "5" - 3;
+let z = true + 2;
+let w = false + "5";
+console.log(x, y, z, w);
+
+
+9. Type Coercion Challenge
+Predict the output and explain:
+console.log(1 + "2" + "2");
+console.log(1 + +"2" + "2");
+console.log(1 + -"1" + "2");
+console.log(+"1" + "1" + "2");
+
+10. Hoisting Example
+Predict the output and explain:
+console.log(a);
+let a = 15;
+
