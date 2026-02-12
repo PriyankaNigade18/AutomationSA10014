@@ -77,3 +77,18 @@ Predict the output and explain:
 console.log(a);
 let a = 15;
 
+Assignments On Control Flow
+=============================
+11.Assignment: Design this code based on nested if
+Passing criteria for student is 40 marks
+ and then if marks between 40 to 60 then
+gread B and above 60 grade is A
+
+
+12. accept number and test it is even or odd
+
+13. accept/declare 3 numbers and compare greater number
+
+14. test multiple enviornments dev,qa,stage,prod for testing
+
+15. Write browser(chrome,firefox,edge,safari,opera) scenario using switch case
