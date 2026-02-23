@@ -23,7 +23,7 @@ it("Test case for amazon",()=>{
     
 })
 
-it("Test case for CRm",()=>{
+it.only("Test case for CRm",()=>{
 
     cy.visit("https://automationplayground.com/crm");
     

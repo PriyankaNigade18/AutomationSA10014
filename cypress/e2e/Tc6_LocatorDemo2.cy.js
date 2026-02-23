@@ -105,79 +105,42 @@ ul.dropdown-menu-right>li:nth-child(5)>a
 
 */
 
-describe("Test for Cypress Locators",()=>{
+describe("Test Opencart with cssSelector",()=>{
 
-it("Test for CRM login and Logout functaionality",()=>{
+
+it("Test Login and Logout Feature",()=>{
 
 //open application
-cy.visit("https://automationplayground.com/crm/");
+cy.visit("https://tutorialsninja.com/demo/index.php?route=account/login");
 
-//click on Sign In link with contains()
-//cy.contains("Sign In").click();
-
-//click on SignIn link using id/ cssSelector
-cy.get("a#SignIn").click();
+//email
+cy.get("#input-email").type("test2525@gmail.com");
 
 
-//after click app navigated to next login page lets validate it
-cy.url().should("include","login.html");
+//password
+cy.get("#input-password").type("test123");
+
+//login button
+cy.get("input[value='Login']").click();
+
+//click on arrow
+cy.get("span.caret").click();
+
+//click on Logout with contains()
+//cy.contains("Logout").click();
+
+//click on logout with cssSelector using indexing
+cy.get("ul.dropdown-menu-right>li:nth-child(5)>a").click();
 
 
-//login
-//enter email id with id locator from cssSelector
-cy.get("#email-id").type("test123@gmail.com");
+//get the text and print
+cy.get("div#content>h1").then(($ele)=>{
 
-//enter password with tagname with attribute from cssSElector
-cy.get("input[placeholder='Password']").type("test123");
-
-//checkbox automation
-//cy.get("#remember").click();
-
-cy.get("#remember").check();//check the checbox
-
-//static wait like Thread.sleep in Selenium
-cy.wait(2000);//2sec wait
-
-cy.get("#remember").uncheck();//uncheck the checkbox
-
-//click on Submit with classname from cssSelector
-cy.get("button.btn").click();
-
-//page navigated to customers page lets apply assertion
-cy.url().should("include","customers");
-
-
-//signout
-cy.contains("Sign Out").click();
+   let textOfEle=$ele.text();
+   cy.log("Success message is: "+textOfEle);
+})
 
 })
 
 
-it.only("Test for Special Syntax in CssSelector",()=>{
-
-    //open application
-cy.visit("https://www.amazon.in/");
-
-//search with CssSelector * partial match)
-cy.get("input[id*='searcht']").type("Mobile");
-
-//clear the search result with ^starts with from cssSelector
-
-cy.get("input[id^='twotab']").clear();
-
-
-//search for bags with $ endswith from CssSelector
-cy.get("input[id$='box']").type("bags");
-
 })
-
-
-
-
-
-})
-
-
-
-
-
