@@ -158,6 +158,10 @@ it.only("Test for Special Syntax in CssSelector",()=>{
     //open application
 cy.visit("https://www.amazon.in/");
 
+cy.wait(2000);
+ 
+cy.screenshot("AmazonHomePage");
+
 //search with CssSelector * partial match)
 cy.get("input[id*='searcht']").type("Mobile");
 

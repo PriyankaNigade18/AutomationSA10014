@@ -12,8 +12,8 @@ and()
 
 2.Explicit Assertion(Need Cypress variable)
 -------------------------------------------
-1.expect(): TDD
-2.assert(): BDD
+1.assert(): TDD
+2.expect(): BDD
 
 */
 
@@ -39,7 +39,7 @@ describe("Validate google title and url",()=>{
     })
 
 
-    it("Test for Orangehrm invalid title and url ",()=>{
+    it.skip("Test for Orangehrm invalid title and url ",()=>{
 
         //open application
         cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
@@ -54,6 +54,12 @@ describe("Validate google title and url",()=>{
           cy.log("Title tested!") ;       
     })
 
+    it("For Invalid title",()=>{
+        cy.visit("https://www.google.com")
+
+        //for invalid title assertion
+        cy.title().should("eq","GoogleApp");
+    })
 
 
 

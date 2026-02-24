@@ -110,8 +110,11 @@ describe("Test Opencart with cssSelector",()=>{
 
 it("Test Login and Logout Feature",()=>{
 
-//open application
+//open applicationn
 cy.visit("https://tutorialsninja.com/demo/index.php?route=account/login");
+
+//screenshot
+cy.screenshot("OpenCartHomePage.png");
 
 //email
 cy.get("#input-email").type("test2525@gmail.com");
