@@ -25,4 +25,43 @@ cy.on("window:alert",(alt1)=>{
 
     })
 
+
+it("Test Confirmation alert",()=>{
+
+    cy.visit("https://the-internet.herokuapp.com/javascript_alerts");
+
+    cy.contains("Click for JS Confirm").click();
+
+
+    //assert
+    // cy.get("#result").should("have.text","You clicked: Ok");
+    // cy.log("Cypress automatically handled alert!");
+
+    //auto dismiss alert(to click on cancel button)
+    cy.on("window:confirm",()=>false);
+
+    cy.get("#result").should("have.text","You clicked: Cancel");
+     cy.log("Cypress automatically handled alert by click cancel button!");
+
+})
+
+
+
+it.only("Test for Prompt alert",()=>{
+
+ cy.visit("https://the-internet.herokuapp.com/javascript_alerts");
+
+ //before openinig prompt alert take control of that window and pass text 
+ cy.window().then((win)=>{
+
+    cy.stub(win,"prompt").returns("Hello All");
+ })
+
+ //open alert 
+ cy.contains("Click for JS Prompt").click();
+
+ //assert
+
+cy.get("#result").should("have.text","You entered: Hello All");
+})
 })
