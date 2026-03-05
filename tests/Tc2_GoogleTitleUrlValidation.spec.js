@@ -33,6 +33,7 @@ test("Test for Google title and Url validation",async({page})=>{
     //assertions on variable: Js method toEqual() toContain()
     expect(appTitle).toEqual("Google");//full match
 
+  
     expect(appUrl).toEqual("https://www.google.com/");//full match
 
     //partial match
